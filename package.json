@@ -1,0 +1,54 @@
+{
+  "name": "opustotale",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Opustotale components declared once and rendered per platform (TypeScript, Rust, Kotlin, Swift, PostgreSQL), the products composed from them, and the specs, guides, and skills that define them.",
+  "engines": {
+    "node": ">=26.9.0",
+    "npm": "Use pnpm instead of npm."
+  },
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "preinstall": "pnpm exec only-allow pnpm",
+    "prepare": "husky",
+    "git:haschanges": "sh -c 'if [ -n \"$(git status --porcelain)\" ]; then echo \"Uncommitted changes\"; exit 1; fi'",
+    "release": "pnpm run git:haschanges && pnpm -r run release && commit-and-tag-version",
+    "release:first": "commit-and-tag-version --first-release",
+    "release:dryrun": "pnpm run git:haschanges && pnpm -r run release:dryrun && commit-and-tag-version --dry-run",
+    "build": "pnpm -r run build",
+    "lint": "lint-staged",
+    "lint:all": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "20.4.1",
+    "@commitlint/config-conventional": "20.4.1",
+    "@eslint/compat": "2.0.5",
+    "@eslint/css": "0.14.1",
+    "@eslint/js": "10.0.1",
+    "@eslint/json": "1.0.1",
+    "@eslint/markdown": "8.0.1",
+    "@stylistic/eslint-plugin": "5.9.0",
+    "commit-and-tag-version": "12.6.1",
+    "eslint": "10.0.0",
+    "eslint-plugin-import-x": "4.16.1",
+    "eslint-plugin-jsdoc": "62.6.1",
+    "eslint-plugin-jsonc": "2.21.1",
+    "eslint-plugin-n": "17.24.0",
+    "eslint-plugin-package-json": "0.88.3",
+    "eslint-plugin-perfectionist": "5.6.0",
+    "eslint-plugin-promise": "7.2.1",
+    "eslint-plugin-regexp": "3.0.0",
+    "eslint-plugin-toml": "1.1.1",
+    "eslint-plugin-unicorn": "63.0.0",
+    "eslint-plugin-unused-imports": "4.4.1",
+    "eslint-plugin-yml": "3.2.1",
+    "husky": "9.1.7",
+    "lint-staged": "16.4.0",
+    "only-allow": "1.2.2"
+  },
+  "lint-staged": {
+    "*.{js,cjs,mjs,json,json5,jsonc,yaml,yml,toml,css}": "eslint --max-warnings 0 --no-warn-ignored"
+  }
+}

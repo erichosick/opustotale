@@ -1,0 +1,60 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "bypassPermissions"
+  },
+  "model": "opus[1m]",
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "voicemode"
+  ],
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/notify.sh\" stop",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/notify.sh\" notify",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  },
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "xhigh"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "xhigh"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "auto",
+  "agentPushNotifEnabled": true
+}

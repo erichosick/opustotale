@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+release/
+.build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.envrc
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+
+# Temporary
+tmp/
+temp/
