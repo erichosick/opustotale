@@ -1,0 +1,8 @@
+packages:
+  - 'components/*/ts/lib'
+  - 'components/*/ts/mech'
+  - 'components/*/sql/lib'
+  # a product target is named for where it runs, not its language; pnpm
+  # registers only the targets that carry a package.json
+  - 'products/*/*'
+  - 'docs/skills/*'

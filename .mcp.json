@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "voicemode": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--refresh",
+        "--with",
+        "webrtcvad",
+        "--with",
+        "setuptools<71",
+        "voice-mode"
+      ],
+      "env": {
+        "STT_BASE_URL": "http://127.0.0.1:2022/v1",
+        "TTS_BASE_URL": "http://127.0.0.1:8880/v1",
+        "VOICEMODE_KOKORO_DEFAULT_VOICE": "bf_emma",
+        "VOICEMODE_DEFAULT_SPEED": "1.4"
+      }
+    }
+  }
+}
